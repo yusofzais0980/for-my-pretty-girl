@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Invitation</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ffe4ec,#fff7d6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    text-align:center;
+    overflow:hidden;
+}
+.card {
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    max-width:460px;
+    width:90%;
+}
+button {
+    padding:14px 22px;
+    border:none;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    margin:10px;
+}
+.yes {background:#ff4f87;color:white;}
+.no {background:#ddd;color:#333;position:relative;}
+.hidden {display:none;}
+h1 {font-size:1.8rem;}
+p {font-size:1.1rem;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="card">
+
+<div id="page1">
+<h1>Would you like to hang out and grab some food with me? ❤️</h1>
+<p>Good vibes, good conversation, and getting to see my pretty girl 😌💕</p>
+
+<button class="yes" onclick="goToPage2()">Yes 💕</button>
+<button class="no" onmouseover="moveNo(this)" onclick="moveNo(this)">No 😭</button>
+</div>
+
+<div id="page2" class="hidden">
+<h1>How about some halal food? 🍽️</h1>
+<p>Only the best food for my pretty girl 😌💕</p>
+
+<button class="yes" onclick="showEnding()">Yes, halal food sounds good 💕</button>
+<button class="no" onmouseover="moveNo(this)" onclick="moveNo(this)">No 😭</button>
+</div>
+
+<div id="ending" class="hidden">
+<h1>Let's go! 🎉</h1>
+<p><b>Friday at 6:00 PM it is 😌💕</b></p>
+<p>📅 Friday<br>🕕 6:00 PM</p>
+<p>Halal food, good vibes, and my pretty girl ❤️</p>
+<p>Can't wait to see you 😌💕</p>
+</div>
+
+</div>
+
+<script>
+function goToPage2(){
+ document.getElementById('page1').classList.add('hidden');
+ document.getElementById('page2').classList.remove('hidden');
+}
+
+function showEnding(){
+ document.getElementById('page2').classList.add('hidden');
+ document.getElementById('ending').classList.remove('hidden');
+}
+
+function moveNo(btn){
+ btn.style.transform=`translate(${Math.random()*180-90}px,${Math.random()*120-60}px)`;
+}
+</script>
+</body>
+</html>
